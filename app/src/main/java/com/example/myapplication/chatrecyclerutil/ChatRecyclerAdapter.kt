@@ -2,6 +2,7 @@ package com.example.myapplication.chatrecyclerutil
 
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
@@ -14,11 +15,13 @@ import com.example.myapplication.databinding.OtherUserMessageBinding
 class ChatRecyclerAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
-    public interface userBtnClicked {
+    interface UserBtnClicked {
 
         fun onUserBtnClicked(num: Int)
+
+        fun onViewLongClicked(v: View,  pos: Int): Boolean
     }
-    lateinit var mBtnClickListener: userBtnClicked
+    lateinit var mBtnClickListener: UserBtnClicked
 
 
     var messageList = mutableListOf<ChatItem>()
@@ -89,6 +92,12 @@ class ChatRecyclerAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ChatItem) {
             binding.currentUserTextView.text = (item as ChatItem.ChatMessage).message
+            //binding.currentUserTextView.setLongClickable(true)
+
+            binding.currentUserTextView.setOnLongClickListener {
+
+                mBtnClickListener.onViewLongClicked(it, adapterPosition)
+            }
         }
     }
 
@@ -96,6 +105,12 @@ class ChatRecyclerAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ChatItem) {
             binding.otherUserTextView.text = (item as ChatItem.ChatMessage).message
+            //binding.otherUserTextView.setLongClickable(true)
+
+            binding.otherUserTextView.setOnLongClickListener {
+
+               mBtnClickListener.onViewLongClicked(it, adapterPosition)
+            }
         }
     }
 
