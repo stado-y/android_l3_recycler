@@ -101,4 +101,23 @@ class ChatModel: ViewModel() {
         }
 
     }
+
+    fun deleteMessage(index: Int): Boolean {
+
+        val messageList = messages.value
+        return if (messageList != null && index < messageList.size)
+        {
+            messageList.removeAt(index)
+            countMessages(messageList)
+            messageList[0] = getNewChatHeader()
+
+            messages.value = messageList
+
+             true
+        }
+        else
+        {
+            false
+        }
+    }
 }

@@ -3,4 +3,10 @@
     <string name="btnSendText">Send</string>
     <string name="firstUserBtnText">First user</string>
     <string name="secondUserBtnText">Second user</string>
+
+
+    <string name="menu_cancel">Cancel</string>
+    <string name="menu_delete">Delete</string>
+
+
 </resources>
