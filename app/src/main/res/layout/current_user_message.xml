@@ -12,10 +12,11 @@
         android:id="@+id/currentUserTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#9CA4E8"
+        android:background="@drawable/message_border"
+        android:backgroundTint="@color/choosenUserColor"
         android:text="TextView"
         android:textAlignment="viewStart"
-        android:textSize="20sp"
+        android:textSize="@dimen/chat_message_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

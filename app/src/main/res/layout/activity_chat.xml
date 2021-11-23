@@ -15,31 +15,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/sendMessageBtn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="@dimen/chat_btn_width"
+        android:layout_height="@dimen/chat_btn_height"
+        android:background="@drawable/chat_buttons_border"
+        android:text="@string/btnSendText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <EditText
         android:id="@+id/textInputView"
         style="@style/Widget.AppCompat.EditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
         android:background="@drawable/textinput_border"
         android:ems="10"
+        android:foregroundGravity="top|left"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:maxLength="200"
         android:maxLines="15"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/chat_btn_height"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="@id/sendMessageBtn"
         app:layout_constraintEnd_toStartOf="@+id/sendMessageBtn"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="send a message..." />
-
-    <Button
-        android:id="@+id/sendMessageBtn"
-        android:layout_width="102dp"
-        android:layout_height="54dp"
-        android:foregroundGravity="top"
-        android:text="@string/btnSendText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

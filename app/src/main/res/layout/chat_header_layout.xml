@@ -16,7 +16,7 @@
 
         <Button
             android:id="@+id/firstUserChatBtn"
-            style="?android:attr/buttonBarButtonStyle"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_horizontal|center_vertical"
@@ -24,21 +24,19 @@
             android:foregroundGravity="center_vertical|center_horizontal"
             android:gravity="center|center_horizontal|center_vertical"
             android:hint="@string/firstUserBtnText"
-            android:text="@string/firstUserBtnText"
-            android:textColor="#00796B" />
+            android:text="@string/firstUserBtnText" />
 
         <Button
             android:id="@+id/secondUserChatBtn"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_gravity="center|center_horizontal|center_vertical"
             android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:foregroundGravity="center_vertical|center_horizontal"
             android:gravity="center|center_horizontal|center_vertical"
             android:hint="@string/secondUserBtnText"
             android:text="@string/secondUserBtnText"
-            android:textColor="#00796B"
             tools:ignore="TextContrastCheck" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
