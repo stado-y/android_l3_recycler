@@ -6,7 +6,7 @@
 
     <!-- Border Color -->
     <stroke android:width="@dimen/border_width"
-            android:color="@color/border_textinput" />
+        android:color="@color/border_message" />
 
     <!-- Round Corners -->
     <corners android:radius="@dimen/border_radius" />
