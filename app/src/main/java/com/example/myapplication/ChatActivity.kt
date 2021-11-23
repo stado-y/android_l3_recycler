@@ -71,11 +71,17 @@ class ChatActivity : AppCompatActivity(), UserBtnClicked {
 
     private fun onBtnSendClick() {
 
-        val message = binding.textInputView.text.toString()
-        chatModel.addMessage(message)
-
+        var message = binding.textInputView.text.toString()
         binding.textInputView.text.clear()
         binding.textInputView.clearFocus()
+
+        message = Regex("""^\s+|\s+?$""").replace(message, "")
+
+        if ( message.isBlank() || message.isEmpty() ) { return }
+
+        chatModel.addMessage(message)
+
+        binding.chatRecyclerView.smoothScrollToPosition(chatAdapter.itemCount)
     }
 
     private fun updateAdapterMessageList(newList: MutableList<ChatItem>) {
@@ -134,26 +140,6 @@ class ChatActivity : AppCompatActivity(), UserBtnClicked {
 
     }
 
-//    override fun onCreateContextMenu(menu: ContextMenu, v: View,
-//                                 menuInfo: ContextMenu.ContextMenuInfo) {
-//        super.onCreateContextMenu(menu, v, menuInfo)
-//        val inflater: MenuInflater = menuInflater
-//        inflater.inflate(R.menu.chat_messages_menu, menu)
-//    }
-//
-//    override fun onContextItemSelected(item: MenuItem): Boolean {
-//
-//        return when (item.itemId) {
-//
-//            R.id.menu_cancel -> false
-//            R.id.menu_delete -> {
-//
-//
-//                true
-//            }
-//            else -> super.onContextItemSelected(item)
-//        }
-//    }
 }
 
 
