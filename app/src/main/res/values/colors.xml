@@ -8,5 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="choosenUserColor">#5D6CEE</color>
-    <color name="otherUserColor">#FFFFFFFF</color>
+    <color name="otherUserColor">#C4BE57</color>
+
+    <color name="border_textinput">#ff9900</color>
+    <color name="border_chat_buttons">#00AEFF</color>
+    <color name="border_message">#3300BE</color>
 </resources>
